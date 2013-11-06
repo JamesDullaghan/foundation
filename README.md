@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/JamesDullaghan/foundation.png?branch=5.0-wip)](http://travis-ci.org/JamesDullaghan/foundation)
+
 Welcome to Foundation
 =====================
 
@@ -40,7 +42,7 @@ WordPress (Versions marked 3/20/13)
 * [Starter Theme](https://github.com/drewsymo/Foundation) by Drew Morris using Foundation version 3
 * [WP-Foundation](http://320press.com/wp-foundation/features/) by 320press using Foundation version 3
 * [f415](https://github.com/javorszky/f415) by Gabor Javorszky
-* [Basey](https://github.com/zslabs/basey-theme) by Zach Schnackel 
+* [Basey](https://github.com/zslabs/basey-theme) by Zach Schnackel
 
 Joomla
 

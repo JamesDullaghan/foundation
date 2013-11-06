@@ -1,16 +1,24 @@
 language: node_js
 node_js:
   - "0.10"
+
+branches:
+  only:
+    - 5.0-wip
 env:
-  - FOUNDATION_BOWER_REPO=git@github.com:JamesDullaghan/bower-foundation-css.git
+  - GITHUB_USERNAME=JamesDullaghan
+  - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
+  - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
+  - FOUNDATION_BOWER_PROJECT=bower-foundation-css
 
 script:
   - "grunt compile"
 
 after_success:
+  - "git clone [FOUNDATION_BOWER_REPO]"
   - "cd /dist"
-  - "cp /dist/assets"
-  - "git remote add [FOUNDATION_BOWER_REPO]"
+  - "cp /dist/assets ~/[FOUNDATION_BOWER_PROJECT]"
+  - "cd ~/[FOUNDATION_BOWER_PROJECT]"
   - "git add ."
   - "git commit"
   - "git push origin master"
