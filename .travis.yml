@@ -5,12 +5,16 @@ node_js:
 branches:
   only:
     - 5.0-wip
+# remove?
+
 # env:
 #   - GITHUB_USERNAME=JamesDullaghan
 #   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
 #   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
 #   - FOUNDATION_BOWER_PROJECT=bower-foundation-css
 
+# http://stackoverflow.com/questions/16638573/auto-authorize-ssh-auth-requests-on-travis-ci
+# Sets strict host checking to no in ssh/config
 before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
@@ -21,12 +25,7 @@ script:
 
 after_success:
   - "git clone git@github.com:JamesDullaghan/bower-foundation-css.git"
-  - "cd ~"
-  - pwd
-  - "mkdir bower-foundation-css"
   - "cd /dist"
-  - "cd .."
-  - pwd
   - "cp /dist/assets /bower-foundation-css"
   - "cd ~/bower-foundation-css"
   - "git add ."
