@@ -13,6 +13,7 @@ env:
 
 script:
   - "npm install grunt"
+  - "npm install grunt-cli"
   - "grunt compile"
 
 after_success:
