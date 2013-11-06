@@ -5,11 +5,11 @@ node_js:
 branches:
   only:
     - 5.0-wip
-env:
-  - GITHUB_USERNAME=JamesDullaghan
-  - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
-  - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
-  - FOUNDATION_BOWER_PROJECT=bower-foundation-css
+# env:
+#   - GITHUB_USERNAME=JamesDullaghan
+#   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
+#   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
+#   - FOUNDATION_BOWER_PROJECT=bower-foundation-css
 
 script:
   - "npm install grunt"
@@ -17,9 +17,10 @@ script:
   - "grunt compile"
 
 after_success:
-  - "git clone [FOUNDATION_BOWER_REPO]"
+  - "git clone git@github.com:JamesDullaghan/bower-foundation-css.git"
+  - "mkdir bower-foundation-css"
   - "cd /dist"
-  - "cp /dist/assets ~/[FOUNDATION_BOWER_PROJECT]"
+  - "cp /dist/assets /bower-foundation-css"
   - "cd ~/[FOUNDATION_BOWER_PROJECT]"
   - "git add ."
   - "git commit"
