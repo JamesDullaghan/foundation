@@ -21,9 +21,6 @@ script:
 
 after_success:
   - "git clone git@github.com:JamesDullaghan/bower-foundation-css.git"
-  - send "yes\r"
-
-# homebrew recipes answering question
   - "mkdir bower-foundation-css"
   - "cd /dist"
   - "cp /dist/assets /bower-foundation-css"
