@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "0.10"
+env:
+  - FOUNDATION_BOWER_REPO=git@github.com:JamesDullaghan/bower-foundation-css.git
+
+script:
+  - "grunt compile"
+
+after_success:
+  - "cd /dist"
+  - "cp /dist/assets"
+  - "git remote add [FOUNDATION_BOWER_REPO]"
+  - "git add ."
+  - "git commit"
+  - "git push origin master"
