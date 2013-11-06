@@ -21,7 +21,7 @@ after_success:
   - "mkdir bower-foundation-css"
   - "cd /dist"
   - "cp /dist/assets /bower-foundation-css"
-  - "cd ~/[FOUNDATION_BOWER_PROJECT]"
+  - "cd ~/bower-foundation-css"
   - "git add ."
   - "git commit"
   - "git push origin master"
