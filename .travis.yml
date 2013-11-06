@@ -22,11 +22,11 @@ script:
 after_success:
   - "git clone git@github.com:JamesDullaghan/bower-foundation-css.git"
   - "cd ~"
-  - "pwd"
+  - pwd
   - "mkdir bower-foundation-css"
   - "cd /dist"
   - "cd .."
-  - "pwd"
+  - pwd
   - "cp /dist/assets /bower-foundation-css"
   - "cd ~/bower-foundation-css"
   - "git add ."
