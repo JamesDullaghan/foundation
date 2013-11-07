@@ -9,8 +9,8 @@ git config --global user.name "James"
 git clone https://github.com/JamesDullaghan/bower-foundation-css.git bower-foundation-css
 
 #go into directory and copy data we're interested in to that directory
+cp -Rf dist/assets .
 cd bower-foundation-css
-cp -Rf JamesDullaghan/foundation/dist/assets .
 
 #add, commit and push files
 git add -f .
