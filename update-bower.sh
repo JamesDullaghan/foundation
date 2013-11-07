@@ -18,7 +18,8 @@ cd bower-foundation-css
 git add .
 git commit -m "Foundation build to bower-foundation-css"
 # force quiet
-git push origin bower-foundation-css
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+git push -fq origin master
 
 echo -e "Done with magic\n"
 # fi
