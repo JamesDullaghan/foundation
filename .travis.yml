@@ -21,6 +21,8 @@ after_script:
   - git clone https://JamesDullaghan:${GH_TOKEN}@github.com/JamesDullaghan/bower-foundation-css.git
   - cp -r dist/assets/* bower-foundation-css/
   - cd bower-foundation-css
+  - git remote rm origin
+  - git remote add origin https://JamesDullaghan:${GH_TOKEN}@github.com/JamesDullaghan/bower-foundation-css.git
   - git add .
   - git commit -m "Foundation build to bower-foundation-css"
   - git push -fq origin master
