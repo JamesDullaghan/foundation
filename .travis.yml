@@ -23,11 +23,13 @@ script:
   - "npm install grunt-cli"
   - "grunt compile"
 
-after_script:
-  - "cd /dist"
-  - "cp /dist/assets /bower-foundation-css"
-  - "cd .."
-  - "cd /bower-foundation-css"
-  - "git add ."
-  - "git commit"
-  - "git push origin master"
+after_success: ./update-bower.sh
+
+# after_script:
+#   - "cd /dist"
+#   - "cp /dist/assets /bower-foundation-css"
+#   - "cd .."
+#   - "cd /bower-foundation-css"
+#   - "git add ."
+#   - "git commit"
+#   - "git push origin master"
