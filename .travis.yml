@@ -1,26 +1,23 @@
 language: node_js
 node_js:
 - '0.10'
+env:
+  global:
+  - secure: "AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI="
 branches:
   only:
   - 5.0-wip
 before_script:
-- echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- git config --global user.email "james@fldlvl.com"
-- git config --global user.name "JamesDullaghan"
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - git config --global user.email "james@fldlvl.com"
+  - git config --global user.name "JamesDullaghan"
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 script:
 - npm install grunt
 - npm install grunt-cli
 - grunt compile
-env:
-  global:
-  - secure: "AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI="
-# - chmod 777 ./update-bower.sh
-# - ./update-bower.sh
 after_success:
-- git config credential.helper "store --file=.git/credentials"
-- pwd
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git clone https://github.com/JamesDullaghan/bower-foundation-css.git
 - cp -r dist/assets/* bower-foundation-css/
 - cd bower-foundation-css
