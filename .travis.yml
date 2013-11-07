@@ -1,26 +1,23 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 branches:
   only:
   - 5.0-wip
 before_script:
-  # authorize ssh auth requests
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - git config --global user.email "james@fldlvl.com"
-  - git config --global user.name "JamesDullaghan"
+- echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- git config --global user.email "james@fldlvl.com"
+- git config --global user.name "JamesDullaghan"
 script:
-  - npm install grunt
-  - npm install grunt-cli
-  - grunt compile
+- npm install grunt
+- npm install grunt-cli
+- grunt compile
 env:
   global:
-    secure: T2OHXtOvq0ku/3FmIZD2eScIRZzoKjenNDbZKqFxR4MyBMB96jkLJ6yTUcCDIIjUab4HzHsUOlcgxaooqgiPDsWhhjIde4wKSjvHREcTnKcszMQ2DKfCsqlCcx7ofvEX8M21wSViwDawPQf6LsHwtdlyq5WJFDo8ZJKNfhHATwQ=
+  - secure: AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI=
 after_success:
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-  - node ./node_modules/grunt-cli/bin/grunt release
-  - chmod 777 ./update-bower.sh
-  - ./update-bower.sh
-after_script:
-  - git push -fq origin master
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- node ./node_modules/grunt-cli/bin/grunt release
+- chmod 777 ./update-bower.sh
+- ./update-bower.sh

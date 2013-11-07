@@ -15,7 +15,7 @@ git commit -m "Foundation build to bower-foundation-css"
 # Follow rest of direction in this SO post
 # http://stackoverflow.com/questions/18027115/comitting-via-travis-ci-failing
 
-# git push -fq origin master
+git push -fq origin master
 
 echo -e "Done with magic\n"
 # fi
