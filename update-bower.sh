@@ -1,3 +1,5 @@
+PATH=home/travis/build/JamesDullaghan
+
 # if [ "$PULL_REQUEST" == "false" ]; then
 echo -e "Starting to update Foundation to bower\n"
 
@@ -9,7 +11,7 @@ git config --global user.name "James"
 git clone https://github.com/JamesDullaghan/bower-foundation-css.git
 
 #go into directory and copy data we're interested in to that directory
-cp dist/assets home/travis/build/JamesDullaghan/foundation/bower-foundation-css
+cp -Rf $PATH/dist/assets $PATH/foundation/bower-foundation-css
 cd bower-foundation-css
 
 
