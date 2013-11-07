@@ -1,37 +1,23 @@
 language: node_js
 node_js:
-  - "0.10"
-
+  - '0.10'
 branches:
   only:
-    - 5.0-wip
-
-# env:
-  # - HOME=JamesDullaghan/foundation
-#   - GITHUB_USERNAME=JamesDullaghan
-#   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
-#   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
-#   - FOUNDATION_BOWER_PROJECT=bower-foundation-css
-
-# http://stackoverflow.com/questions/16638573/auto-authorize-ssh-auth-requests-on-travis-ci
-# Sets strict host checking to no in ssh/config
+  - 5.0-wip
 before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-
+  - git config --global user.email "james@fldlvl.com"
+  - git config --global user.name "James"
 script:
-  - "npm install grunt"
-  - "npm install grunt-cli"
-  - "grunt compile"
-
+  - npm install grunt
+  - npm install grunt-cli
+  - grunt compile
+env:
+  global:
+    secure: T2OHXtOvq0ku/3FmIZD2eScIRZzoKjenNDbZKqFxR4MyBMB96jkLJ6yTUcCDIIjUab4HzHsUOlcgxaooqgiPDsWhhjIde4wKSjvHREcTnKcszMQ2DKfCsqlCcx7ofvEX8M21wSViwDawPQf6LsHwtdlyq5WJFDo8ZJKNfhHATwQ=
 after_script:
-  - "chmod 777 ./update-bower.sh"
+  - chmod 777 ./update-bower.sh
   - ./update-bower.sh
-
-# after_script:
-#   - "cd /dist"
-#   - "cp /dist/assets /bower-foundation-css"
-#   - "cd .."
-#   - "cd /bower-foundation-css"
-#   - "git add ."
-#   - "git commit"
-#   - "git push origin master"
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  - node ./node_modules/grunt-cli/bin/grunt release
