@@ -18,7 +18,7 @@ script:
   - npm install grunt-cli
   - grunt compile
 after_script:
-  - git clone https://github.com/JamesDullaghan/bower-foundation-css.git
+  - git clone https://JamesDullaghan:${GH_TOKEN}@github.com/JamesDullaghan/bower-foundation-css.git
   - cp -r dist/assets/* bower-foundation-css/
   - cd bower-foundation-css
   - git add .
