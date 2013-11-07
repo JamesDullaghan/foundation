@@ -25,7 +25,7 @@ script:
   - "grunt compile"
 
 after_script:
-  - "chmod 777"
+  - "chmod 777 ./update-bower.sh"
   - ./update-bower.sh
 
 # after_script:
