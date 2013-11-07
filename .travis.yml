@@ -14,7 +14,7 @@ script:
 - grunt compile
 env:
   global:
-  - secure: AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI=
+  - secure: "AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI="
 # - chmod 777 ./update-bower.sh
 # - ./update-bower.sh
 after_success:
