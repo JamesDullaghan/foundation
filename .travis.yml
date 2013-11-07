@@ -15,9 +15,15 @@ script:
 env:
   global:
   - secure: AQUUrGnl/0PQ7QvLhl6yRn4Zt0zQU8P+hRcR/5vozppN7WyBKD6nE0fU2Zbc7BX0Q0g8/XBUA/PvUHVlQLI/iVd59Fhgq7ZJ/AaNi/z9TtturTg+QcNNxmdb4zK531ms1qA8EX2edGS+V07ZQv+mZUsq5EWTubZdYrecMLtevTI=
+# - chmod 777 ./update-bower.sh
+# - ./update-bower.sh
 after_success:
 - git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- node ./node_modules/grunt-cli/bin/grunt release
-- chmod 777 ./update-bower.sh
-- ./update-bower.sh
+- echo "https://${GH_TOKEN}:@github.com" >> .git/credentials
+- git clone https://github.com/JamesDullaghan/bower-foundation-css.git
+- cp -r dist/assets/* bower-foundation-css/
+- cd bower-foundation-css
+- git add .
+- git commit -m "Foundation build to bower-foundation-css"
+- git push -fq origin master
+- echo -e "Done with magic\n"
