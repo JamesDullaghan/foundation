@@ -10,7 +10,7 @@ git clone https://github.com/JamesDullaghan/bower-foundation-css.git bower-found
 
 #go into directory and copy data we're interested in to that directory
 cd bower-foundation-css
-cp -Rf $HOME/dist/assets/* .
+cp -Rf JamesDullaghan/foundation/dist/assets/* .
 
 #add, commit and push files
 git add -f .

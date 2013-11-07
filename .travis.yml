@@ -6,8 +6,8 @@ branches:
   only:
     - 5.0-wip
 
-env:
-  - HOME=JamesDullaghan/foundation
+# env:
+  # - HOME=JamesDullaghan/foundation
 #   - GITHUB_USERNAME=JamesDullaghan
 #   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
 #   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
