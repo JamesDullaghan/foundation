@@ -5,12 +5,13 @@ echo -e "Starting to update Foundation to bower\n"
 git config --global user.email "james@fldlvl.com"
 git config --global user.name "James"
 
-#using token clone gh-pages branch
+# clone bower-foundation-css
 git clone https://github.com/JamesDullaghan/bower-foundation-css.git bower-foundation-css
 
 #go into directory and copy data we're interested in to that directory
-cp -Rf dist/assets .
+cp -Rf dist/assets JamesDullaghan/foundation/bower-foundation-css
 cd bower-foundation-css
+
 
 #add, commit and push files
 git add -f .
