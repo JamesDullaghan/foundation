@@ -7,14 +7,14 @@ branches:
 before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - git config --global user.email "james@fldlvl.com"
-  - git config --global user.name "James"
+  - git config --global user.name "JamesDullaghan"
 script:
   - npm install grunt
   - npm install grunt-cli
   - grunt compile
 env:
   global:
-    secure: {"T2OHXtOvq0ku/3FmIZD2eScIRZzoKjenNDbZKqFxR4MyBMB96jkLJ6yTUcCDIIjUab4HzHsUOlcgxaooqgiPDsWhhjIde4wKSjvHREcTnKcszMQ2DKfCsqlCcx7ofvEX8M21wSViwDawPQf6LsHwtdlyq5WJFDo8ZJKNfhHATwQ="}
+    secure: T2OHXtOvq0ku/3FmIZD2eScIRZzoKjenNDbZKqFxR4MyBMB96jkLJ6yTUcCDIIjUab4HzHsUOlcgxaooqgiPDsWhhjIde4wKSjvHREcTnKcszMQ2DKfCsqlCcx7ofvEX8M21wSViwDawPQf6LsHwtdlyq5WJFDo8ZJKNfhHATwQ=
 after_script:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
