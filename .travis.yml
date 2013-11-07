@@ -16,14 +16,14 @@ branches:
 # Sets strict host checking to no in ssh/config
 before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - "git clone https://github.com/JamesDullaghan/bower-foundation-css.git"
+  # - "git clone https://github.com/JamesDullaghan/bower-foundation-css.git"
 
 script:
   - "npm install grunt"
   - "npm install grunt-cli"
   - "grunt compile"
 
-after_success: ./update-bower.sh
+after_script: ./update-bower.sh
 
 # after_script:
 #   - "cd /dist"
