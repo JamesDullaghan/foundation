@@ -7,7 +7,7 @@ branches:
     - 5.0-wip
 
 env:
-  - HOME=/home/travis
+  - HOME=/JamesDullaghan/foundation
 #   - GITHUB_USERNAME=JamesDullaghan
 #   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
 #   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
@@ -17,7 +17,6 @@ env:
 # Sets strict host checking to no in ssh/config
 before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  # - "git clone https://github.com/JamesDullaghan/bower-foundation-css.git"
 
 script:
   - "npm install grunt"
