@@ -25,7 +25,7 @@ script:
   - "grunt compile"
 
 after_script:
-  - echo "pwd is: `pwd`"
+  - echo -e "pwd is: `pwd`"
   - "cd /dist"
   - "cp /dist/assets /bower-foundation-css"
   - "cd ~/bower-foundation-css"
