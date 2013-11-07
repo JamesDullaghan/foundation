@@ -14,10 +14,10 @@ cd bower-foundation-css
 
 
 #add, commit and push files
-git add -f .
+git add .
 git commit -m "Foundation build to bower-foundation-css"
 # force quiet
-git push -fq origin bower-foundation-css
+git push origin bower-foundation-css
 
 echo -e "Done with magic\n"
 # fi
