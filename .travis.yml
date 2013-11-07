@@ -6,7 +6,8 @@ branches:
   only:
     - 5.0-wip
 
-# env:
+env:
+  - HOME=/home/travis/
 #   - GITHUB_USERNAME=JamesDullaghan
 #   - FOUNDATION_REPO=git@github.com:[GITHUB_USERNAME]/foundation.git
 #   - FOUNDATION_BOWER_REPO=git@github.com:[GITHUB_USERNAME]/bower-foundation-css.git
@@ -23,7 +24,9 @@ script:
   - "npm install grunt-cli"
   - "grunt compile"
 
-after_script: ./update-bower.sh
+after_script:
+  - "chmod 777"
+  - ./update-bower.sh
 
 # after_script:
 #   - "cd /dist"
